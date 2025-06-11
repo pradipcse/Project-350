@@ -13,6 +13,7 @@ repo-name/
 ├── frontend/           # React App  
 ├── docs/               # Documentation  
 └── README.md           # You are here
+```
 ## ✨ Key Features
 
 ### 📚 Academic Resource Exchange
