@@ -2,7 +2,7 @@ from rest_framework import serializers
 from ..models.product import Product
 
 class ProductSerializer(serializers.ModelSerializer):
-    uploader = serializers.ReadOnlyField(source='uploader.email')
+    #uploader = serializers.ReadOnlyField(source='uploader.email')
     average_rating = serializers.FloatField(read_only=True)
     number_of_reviews = serializers.IntegerField(read_only=True)
     current_price = serializers.FloatField(read_only=True)
@@ -12,7 +12,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = [
+        fields = [ 
             'id', 'name', 'slug', 'image', 'category',
             'price', 'discount_price', 'current_price', 'stock',
             'description', 'average_rating', 'number_of_reviews',

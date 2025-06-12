@@ -5,4 +5,4 @@ class UserSerializer(serializers.ModelSerializer):
     role = serializers.CharField(source='user_type')
     class Meta:
         model = CustomUser
-        fields = ['id', 'email', 'phone_number', 'role']
+        fields = ['id', 'email', 'phone_number', 'role','is_staff']

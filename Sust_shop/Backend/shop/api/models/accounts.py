@@ -8,21 +8,30 @@ USER_TYPE_CHOICES = (
 )
 
 class CustomUserManager(BaseUserManager):
-    def create_user(self, email, phone_number, password=None, user_type='user', **extra_fields):
-        if not email:
-            raise ValueError('Email is required')
-        if not phone_number:
-            raise ValueError('Phone number is required')
-        if user_type not in ['seller', 'user']:
-            # To prevent user creation as admin from public endpoints
-            user_type = 'user'
-        email = self.normalize_email(email)
-        user = self.model(email=email, phone_number=phone_number, user_type=user_type, **extra_fields)
-        user.set_password(password)
-        user.save(using=self._db)
-        return user
+     def create_user(self, email, phone_number, password=None, user_type='user', **extra_fields):
+      if not email:
+        raise ValueError('Email is required')
+      if not phone_number:
+        raise ValueError('Phone number is required')
 
-    def create_superuser(self, email, phone_number, password=None, **extra_fields):
+    # ✅ Allow admin creation only if explicitly passed and is_staff is True
+      if user_type == 'admin' and not extra_fields.get('is_staff'):
+        # If someone tries to create an admin without staff privilege, fallback to 'user'
+        user_type = 'user'
+
+      email = self.normalize_email(email)
+      user = self.model(
+        email=email,
+        phone_number=phone_number,
+        user_type=user_type,
+        **extra_fields
+    )
+      user.set_password(password)
+      user.save(using=self._db)
+      return user
+
+
+     def create_superuser(self, email, phone_number, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
         # Superuser is allowed to create an admin account or themselves
