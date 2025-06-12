@@ -40,3 +40,6 @@ repo-name/
 - *Seller Dashboard* - Track views, sales, and customer ratings
 - *Admin Portal* - Content moderation and dispute resolution
 - *Usage Reports* - Monthly statistics on platform activity
+### License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
