@@ -3,6 +3,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.conf.urls.static import static
 from api.views.admin import AdminUserViewSet
 from api.views.adminReg import  CreateAdminUserView
+from api.views.cart import CartItemViewSet
 from api.views.category import CategoryViewSet# SubCategoryViewSet
 from api.views.login import LoginView
 from api.views.product import ProductViewSet
@@ -21,6 +22,7 @@ router.register(r'categories', CategoryViewSet)
 router.register('reviews', ReviewViewSet)
 router.register(r'products', ProductViewSet)
 router.register(r'admin-user', AdminUserViewSet, basename='admin-user')
+router.register(r'cart', CartItemViewSet, basename='cart')
 
 # router.register(r'subcategories', SubCategoryViewSet)
 
@@ -39,6 +41,7 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('seller-details/create/', SellerDetailsCreateView.as_view(), name='seller-details-create'),
     path('seller-details/', SellerDetailsDetailView.as_view(), name='seller-details-detail'),
+    # path('cart/',CartItemViewSet.as_view(), name='cart-item' ),
     path('v1/', include(router.urls)),
     
 ]
