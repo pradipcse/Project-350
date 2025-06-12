@@ -41,6 +41,14 @@ repo-name/
 - *Admin Portal* - Content moderation and dispute resolution
 - *Usage Reports* - Monthly statistics on platform activity
 
+### ML Model Training
+To retrain the model:
+1. Place training data in data/train/ with subfolders for each class
+2. Run the training notebook:
+
+    ```bash
+    jupyter notebook skin_cancer_training.ipynb
+
 ### Configuration
 - Edit app.py to configure:
 - Database connection parameters
