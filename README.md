@@ -40,6 +40,13 @@ repo-name/
 - *Seller Dashboard* - Track views, sales, and customer ratings
 - *Admin Portal* - Content moderation and dispute resolution
 - *Usage Reports* - Monthly statistics on platform activity
+
+### Configuration
+- Edit app.py to configure:
+- Database connection parameters
+- File upload settings
+- Model paths
+
 ### License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
