@@ -41,6 +41,27 @@ repo-name/
 - *Admin Portal* - Content moderation and dispute resolution
 - *Usage Reports* - Monthly statistics on platform activity
 
+### Project Structure
+    
+    skin-cancer-detection/
+    ├── app.py                # Main application file
+    ├── models/               # ML model files
+    │   └── skin_cancer_model.h5
+    ├── static/               # Static files
+    │   ├── css/              # CSS files
+    │   ├── js/               # JavaScript files
+    │   ├── uploads/          # User uploaded images
+    │   └── reports/          # Generated PDF reports
+    ├── templates/            # HTML templates
+    │   ├── base.html         # Base template
+    │   ├── index.html        # Home page
+    │   ├── register.html     # Registration page
+    │   ├── login.html        # Login page
+    │   ├── dashboard.html    # User dashboard
+    │   └── result.html       # Prediction result page
+    ├── requirements.txt      # Python dependencies
+    └── README.md             # Project documentation
+
 ### ML Model Training
 To retrain the model:
 1. Place training data in data/train/ with subfolders for each class
