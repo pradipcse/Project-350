@@ -6,6 +6,7 @@ from api.views.adminReg import  CreateAdminUserView
 from api.views.cart import CartItemViewSet
 from api.views.category import CategoryViewSet# SubCategoryViewSet
 from api.views.login import LoginView
+from api.views.orders import OrderCreateFromCartView, OrderListView
 from api.views.product import ProductViewSet
 from api.views.register import RegisterView
 from api.views.review import ReviewViewSet
@@ -42,6 +43,8 @@ urlpatterns = [
     path('seller-details/create/', SellerDetailsCreateView.as_view(), name='seller-details-create'),
     path('seller-details/', SellerDetailsDetailView.as_view(), name='seller-details-detail'),
     # path('cart/',CartItemViewSet.as_view(), name='cart-item' ),
+    path('orders/', OrderListView.as_view(), name='order-list'),
+    path('orders/create-from-cart/', OrderCreateFromCartView.as_view(), name='order-from-cart'),
     path('v1/', include(router.urls)),
     
 ]
