@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import AdminMgt from './AdminMgt';
 
 const TABS = [
-  { key: 'admin', label: 'Admin User', path: '/admin/manage-users/admin-user' },
+  { key: 'admin', label: 'Admin User', path: '/admin/manage-users/adminRegister' },
   { key: 'user', label: 'Normal User', path: '/users/normal' },
   { key: 'seller', label: 'Seller User', path: '/users/seller' },
 ];
@@ -31,6 +32,10 @@ export default function DB() {
             {tab.label}
           </button>
         ))}
+      </div>
+
+      <div>
+        <AdminMgt></AdminMgt>
       </div>
     </div>
   );

@@ -23,6 +23,7 @@ export default function User() {
         <p><strong>Phone Number:</strong> {user.phone_number || "N/A"}</p>
         <p><strong>Role:</strong> {user.role}</p>
         <p><strong>User ID:</strong> {user.id}</p>
+        <p><strong>Is Staff:</strong> {user.is_staff ? "Yes" : "No"}</p>
       </div>
     </div>
   );

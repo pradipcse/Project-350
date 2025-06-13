@@ -37,7 +37,7 @@ export default function Header() {
         </nav>
 
         <div className="space-x-4 hidden md:block">
-          <NavLink to="/seller" className="text-sm text-gray-600 hover:text-blue-500">
+          <NavLink to="/sellerDB" className="text-sm text-gray-600 hover:text-blue-500">
             Seller
           </NavLink>
           <NavLink to="/adminDashboard" className="text-sm text-gray-600 hover:text-blue-500">

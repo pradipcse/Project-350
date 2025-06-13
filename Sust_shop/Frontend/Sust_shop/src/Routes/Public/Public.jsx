@@ -13,7 +13,11 @@ import Products from "../../Components/Products/Products";
 import Dashboard from "../../Components/Admin/Dashboard";
 import PMGT from "../../Components/Admin/PMGT";
 import DB from "../../Components/Admin/User/DB";
-import Admins from "../../Components/Admin/User/Admins";
+import RegisterAdmin from "../../Components/Admin/User/AdminRegister";
+import SellerProd from "../../Components/Seller/SellerProd";
+import SellerDB from "../../Components/Seller/SellerDB";
+import Cart from "../../Components/Cart/Cart";
+import ProductDetails from "../../Components/Products/ProductDetails";
 
 
 
@@ -37,13 +41,16 @@ const router = createBrowserRouter([
   {path:"/user",element:<Layout><User></User></Layout>},
   {path:"/category",element:<Layout><Category></Category></Layout>},
   {path:"/admin",element:<Layout><Admin></Admin></Layout>},
-  {path:"/seller",element:<Layout><Seller></Seller></Layout>},
+  {path:"/sellerDB",element:<Layout><SellerDB></SellerDB></Layout>},
+  {path:"/sellerDetails",element:<Layout><Seller></Seller></Layout>},
+  {path:"/sellerProd",element:<Layout><SellerProd></SellerProd></Layout>},
   {path:"/adminDashboard",element:<Layout><Dashboard></Dashboard></Layout>},
   {path:"/admin/products",element:<Layout><PMGT></PMGT> </Layout>},
   {path:"/products",element:<Layout><Products></Products></Layout>},
+  {path:"/products/:id",element:<Layout><ProductDetails></ProductDetails></Layout>},
   {path:"/admin/manage-users",element:<Layout><DB></DB></Layout>},
-  {path:"/admin/manage-users/admin-user",element:<Layout><Admins></Admins></Layout>}
-
+  {path:"/admin/manage-users/adminRegister",element:<Layout><RegisterAdmin></RegisterAdmin></Layout>},
+  {path:"/cart",element:<Layout><Cart></Cart></Layout>},
 ]);
 
 export default router;
