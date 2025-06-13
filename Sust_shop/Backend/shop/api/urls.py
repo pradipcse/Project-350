@@ -46,8 +46,8 @@ urlpatterns = [
     # path('cart/',CartItemViewSet.as_view(), name='cart-item' ),
     path('orders/', OrderListView.as_view(), name='order-list'),
     path('orders/create-from-cart/', OrderCreateFromCartView.as_view(), name='order-from-cart'),
-    path('api/v1/seller/orders/', SellerOrderListView.as_view(), name='seller-orders'),
-    path('api/v1/seller/orders/<int:pk>/delete/', SellerDeleteOrderItemView.as_view(), name='delete-seller-order'),
+    path('seller/orders/', SellerOrderListView.as_view(), name='seller-orders'),
+    path('seller/orders/<int:pk>/delete/', SellerDeleteOrderItemView.as_view(), name='delete-seller-order'),
     path('v1/', include(router.urls)),
     
 ]
