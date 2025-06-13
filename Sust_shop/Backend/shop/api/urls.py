@@ -11,6 +11,7 @@ from api.views.product import ProductViewSet
 from api.views.register import RegisterView
 from api.views.review import ReviewViewSet
 from api.views.seller import SellerDetailsCreateView, SellerDetailsDetailView
+from api.views.sellerOrder import SellerDeleteOrderItemView, SellerOrderListView
 from api.views.user import CurrentUserView
 from api.views.userManagement import RoleBasedUserDetailView, RoleBasedUserListView
 from shop import settings
@@ -45,6 +46,8 @@ urlpatterns = [
     # path('cart/',CartItemViewSet.as_view(), name='cart-item' ),
     path('orders/', OrderListView.as_view(), name='order-list'),
     path('orders/create-from-cart/', OrderCreateFromCartView.as_view(), name='order-from-cart'),
+    path('api/v1/seller/orders/', SellerOrderListView.as_view(), name='seller-orders'),
+    path('api/v1/seller/orders/<int:pk>/delete/', SellerDeleteOrderItemView.as_view(), name='delete-seller-order'),
     path('v1/', include(router.urls)),
     
 ]
