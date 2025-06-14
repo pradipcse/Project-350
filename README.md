@@ -15,9 +15,9 @@ Group: <b>16</b><br>
 Project Title: <b>Campus Resource Hub & Entrepreneurship Network</b>
 
 ## Team Members
-1. Al-Amin (**2020331057**)
-2. Md. Sakib Hassan (**2020331109**)
-3. Pradip Pashi (**2020331105**)
+1. Al Amin Hossain (**2020331057**)
+2. Pradip Pashi (**2020331105**)
+3. Md. Sakib Hassan (**2020331109**)
 </div>
 
 
@@ -33,7 +33,7 @@ This platform empowers students by offering:
 
 - 📚 **Resource Sharing** — Buy, sell, or rent books, notes, and equipment.
 - 🛍️ **Entrepreneurship Marketplace** — Promote student-run businesses.
-- 🤖 **Smart Recommendations** — ML-powered suggestions based on user interests.
+ <!-- - 🤖 **Smart Recommendations** — ML-powered suggestions based on user interests. -->
 - 💬 **Built-in Chat System** — Direct communication between users.
 - 📊 **Analytics Dashboard** — Insights into transactions and user activity.
 
@@ -78,13 +78,58 @@ Sust_shop/
 🔹 Prerequisites
 Node.js & npm
 
-Python 3.8+
+- Python 3.8+
+- pip
+- MySQL
+- Git
 
-pip
+### 🛢️ Set up MySQL Database
+To connect the Django backend to a MySQL database, follow these steps using **MySQL Workbench** and **MySQL 9.3**:
 
-MySQL
+### 🔧 Step-by-Step Guide
+1. Download and Install MySQL Workbench and MySQL 9.3:
 
-Git
+  - [MySQL Workbench Download](https://dev.mysql.com/downloads/workbench/)
+  - [MySQL 9.3 Installer](https://dev.mysql.com/downloads/mysql/)
+
+2. Open MySQL Workbench and connect to your local MySQL server.
+
+3. Create a New Database:
+
+```sql
+CREATE DATABASE shop;
+USE shop;
+```
+4. Ensure the following credentials are available:
+
+   - Username: root
+   - Password: cse_2020
+   - Host: localhost
+   - Port: 3308 (make sure this port is active and MySQL server is running on it)
+
+5.Configure Django to use MySQL:
+
+In your Django project settings (settings.py), locate or add the DATABASES configuration block:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'shop',
+        'USER': 'root',
+        'PASSWORD': 'cse_2020',
+        'HOST': 'localhost',
+        'PORT': '3308',
+    }
+}
+```
+6. Run Migrations to Initialize Tables:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+✅ MySQL database is now ready and connected to the Django backend.
 
 ### 🔸 Backend Setup (Django)
 ```
@@ -105,9 +150,9 @@ npm run dev
 Make sure the backend server is running on port 8000, and the frontend can connect via API.
 
 ### 👨‍💻 Contributors
-- Al-Amin (2020331057)
-- Pradip Pashi (2020331105)
-- Md. Sakib Hassan (2020331109)
+- Al Amin Hossain ([github.com/Visible-Unknown](https://github.com/Visible-Unknown))
+- Pradip Pashi ([github.com/pradipcse](https://github.com/pradipcse))
+- Md. Sakib Hassan ([github.com/sakib256124](https://github.com/sakib256124))
 
 Supervisor: <a href = "https://www.sust.edu/departments/cse/faculty/mehedi-cse@sust.edu"> Md. Mehedi Hasan </a>, Lecturer, CSE, SUST
 
