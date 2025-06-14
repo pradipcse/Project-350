@@ -18,6 +18,7 @@ import SellerProd from "../../Components/Seller/SellerProd";
 import SellerDB from "../../Components/Seller/SellerDB";
 import Cart from "../../Components/Cart/Cart";
 import ProductDetails from "../../Components/Products/ProductDetails";
+import Orders from "../../Components/Orders/Orders";
 
 
 
@@ -51,6 +52,7 @@ const router = createBrowserRouter([
   {path:"/admin/manage-users",element:<Layout><DB></DB></Layout>},
   {path:"/admin/manage-users/adminRegister",element:<Layout><RegisterAdmin></RegisterAdmin></Layout>},
   {path:"/cart",element:<Layout><Cart></Cart></Layout>},
+  {path:"/orders",element:<Layout><Orders></Orders></Layout>},
 ]);
 
 export default router;

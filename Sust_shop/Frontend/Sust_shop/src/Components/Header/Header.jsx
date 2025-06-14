@@ -34,6 +34,9 @@ export default function Header() {
           <NavLink to="/category" className="text-gray-700 hover:text-blue-500">
             Category
           </NavLink>
+           <NavLink to="/orders" className="text-gray-700 hover:text-blue-500">
+            Your Orders
+          </NavLink>
         </nav>
 
         <div className="space-x-4 hidden md:block">
