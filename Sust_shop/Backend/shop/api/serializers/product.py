@@ -7,9 +7,9 @@ class ProductSerializer(serializers.ModelSerializer):
     number_of_reviews = serializers.IntegerField(read_only=True)
     current_price = serializers.FloatField(read_only=True)
     image = serializers.ImageField(required=False, allow_null=True, use_url=True)
-    category = serializers.PrimaryKeyRelatedField(
-        queryset=Category.objects.all()
-    )
+    
+    # Accept category as ID during write, and include category name in read
+    category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
 
     class Meta:
         model = Product
@@ -17,9 +17,9 @@ class ProductSerializer(serializers.ModelSerializer):
             'id', 'name', 'slug', 'image', 'category',
             'price', 'discount_price', 'current_price', 'stock',
             'description', 'average_rating', 'number_of_reviews',
-            'uploader', 'created_at', '(updated_at'
+            'uploader', 'created_at', 'updated_at'  # ✅ Fixed here
         ]
-        read_only_fields = ['slug', 'uploader', 'created_at', '(updated_at']
+        read_only_fields = ['slug', 'uploader', 'created_at', 'updated_at']
 
     def create(self, validated_data):
         return Product.objects.create(**validated_data)
