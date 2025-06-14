@@ -2,7 +2,9 @@ from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.conf.urls.static import static
 from api.views.admin import AdminUserViewSet
+from api.views.adminOrder import AdminOrderDeleteView, AdminOrderListView
 from api.views.adminReg import  CreateAdminUserView
+from api.views.adminUserMgt import  UserViewSet
 from api.views.cart import CartItemViewSet
 from api.views.category import CategoryViewSet# SubCategoryViewSet
 from api.views.caurosel import CarouselListCreateView, CarouselRetrieveUpdateDestroyView
@@ -28,6 +30,7 @@ router.register('reviews', ReviewViewSet)
 router.register(r'products', ProductViewSet)
 router.register(r'admin-user', AdminUserViewSet, basename='admin-user')
 router.register(r'cart', CartItemViewSet, basename='cart')
+router.register(r'users/search', UserViewSet, basename='user')
 
 # router.register(r'subcategories', SubCategoryViewSet)
 
@@ -56,6 +59,13 @@ urlpatterns = [
     path('free-products/', FreeProductListCreateView.as_view(), name='freeproduct-list-create'),
     path('free-products/<int:pk>/', FreeProductRetrieveUpdateDestroyView.as_view(), name='freeproduct-detail'),
     path('main/products/search/', ProductSearchView.as_view(), name='product-search'),
+    # path('users/search/', UserListDeleteView.as_view(), name='user-list-delete'),
+    path('admins/orders/', AdminOrderListView.as_view(), name='admin-order-list'),
+    path('admins/orders/<int:pk>/', AdminOrderDeleteView.as_view(), name='admin-order-delete'),
+
+
+
+    
     path('v1/', include(router.urls)),
     
 ]
