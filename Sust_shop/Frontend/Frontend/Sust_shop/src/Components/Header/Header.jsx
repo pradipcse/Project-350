@@ -18,10 +18,13 @@ export default function Header() {
     <header className="bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         <NavLink to="/" className="text-2xl font-bold text-blue-600">
-          SustShop
+          SUSTShop
         </NavLink>
 
         <nav className="space-x-6 hidden md:block">
+           <NavLink to="/main/products/search" className="text-gray-700 hover:text-blue-500">
+            Search Products
+          </NavLink>
           <NavLink to="/" className="text-gray-700 hover:text-blue-500">
             Home
           </NavLink>
@@ -36,6 +39,9 @@ export default function Header() {
           </NavLink>
            <NavLink to="/orders" className="text-gray-700 hover:text-blue-500">
             Your Orders
+          </NavLink>
+            <NavLink to="/free-products" className="text-gray-700 hover:text-blue-500">
+            Free Items
           </NavLink>
         </nav>
 

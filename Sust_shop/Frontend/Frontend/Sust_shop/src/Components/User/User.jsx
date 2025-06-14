@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export default function User() {
@@ -24,6 +24,12 @@ export default function User() {
         <p><strong>Role:</strong> {user.role}</p>
         <p><strong>User ID:</strong> {user.id}</p>
         <p><strong>Is Staff:</strong> {user.is_staff ? "Yes" : "No"}</p>
+      </div>
+
+      <div className="m-4 bg-blue-600 text-xl text-center rounded-lg text-white font-medium">
+        <Link to='/free-products-mgt'>
+        Manage Products you want to Donate
+        </Link>
       </div>
     </div>
   );

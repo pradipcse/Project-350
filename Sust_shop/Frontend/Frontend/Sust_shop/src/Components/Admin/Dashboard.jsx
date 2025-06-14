@@ -29,6 +29,14 @@ const Dashboard = () => {
         >
           Manage Orders
         </button>
+
+         <button
+          onClick={() => navigate("/admin/manage-caurosel")}
+          className="px-6 py-3 bg-purple-600 text-white rounded-md hover:bg-purple-700"
+        >
+          Manage Caurosel
+        </button>
+
       </div>
     </div>
   );

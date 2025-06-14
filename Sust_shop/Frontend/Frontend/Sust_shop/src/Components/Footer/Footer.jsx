@@ -9,9 +9,9 @@ export default function Footer() {
         
         {/* Company Info */}
         <div>
-          <h2 className="text-xl font-bold mb-3">ShopX</h2>
+          <h2 className="text-xl font-bold mb-3">SUSTShop</h2>
           <p className="text-sm text-gray-300">
-            Your one-stop shop for electronics, fashion, and more. Trusted by millions worldwide.
+            A platform that centralizes academic resources and supports student entrepreneurship through resource sharing and business promotion.
           </p>
         </div>
 
@@ -41,16 +41,16 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
           <ul className="text-sm space-y-1 text-gray-300">
-            <li>Email: support@shopx.com</li>
-            <li>Phone: +1 (800) 123-4567</li>
-            <li>Address: 123 Commerce St, New York, NY</li>
+            <li>Email: support@SUSTShop.com</li>
+            <li>Phone: +880 123456789 </li>
+            <li>Address : SUST Campus</li>
           </ul>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} ShopX. All rights reserved.
+        © {new Date().getFullYear()} SUSTShop. All rights reserved.
       </div>
     </footer>
   );
