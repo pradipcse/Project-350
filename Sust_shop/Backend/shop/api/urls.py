@@ -6,6 +6,7 @@ from api.views.adminReg import  CreateAdminUserView
 from api.views.cart import CartItemViewSet
 from api.views.category import CategoryViewSet# SubCategoryViewSet
 from api.views.caurosel import CarouselListCreateView, CarouselRetrieveUpdateDestroyView
+from api.views.freeProduct import FreeProductListCreateView, FreeProductRetrieveUpdateDestroyView
 from api.views.login import LoginView
 from api.views.orders import OrderCreateFromCartView, OrderListView
 from api.views.product import ProductViewSet
@@ -51,6 +52,8 @@ urlpatterns = [
     path('seller/orders/<int:pk>/', SellerOrderView.as_view(), name='seller-order-delete'),
     path('carousel/', CarouselListCreateView.as_view(), name='carousel-list-create'),
     path('carousel/<int:pk>/', CarouselRetrieveUpdateDestroyView.as_view(), name='carousel-detail'),
+    path('free-products/', FreeProductListCreateView.as_view(), name='freeproduct-list-create'),
+    path('free-products/<int:pk>/', FreeProductRetrieveUpdateDestroyView.as_view(), name='freeproduct-detail'),
     path('v1/', include(router.urls)),
     
 ]
