@@ -55,7 +55,7 @@ urlpatterns = [
     path('carousel/<int:pk>/', CarouselRetrieveUpdateDestroyView.as_view(), name='carousel-detail'),
     path('free-products/', FreeProductListCreateView.as_view(), name='freeproduct-list-create'),
     path('free-products/<int:pk>/', FreeProductRetrieveUpdateDestroyView.as_view(), name='freeproduct-detail'),
-     path('main/products/search/', ProductSearchView.as_view(), name='product-search'),
+    path('main/products/search/', ProductSearchView.as_view(), name='product-search'),
     path('v1/', include(router.urls)),
     
 ]

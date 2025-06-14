@@ -2,20 +2,15 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.text import slugify
 from django.conf import settings
-
-CATEGORY_CHOICES = (
-    ('electronics', 'Electronics'),
-    ('fashion', 'Fashion'),
-    ('books', 'Books'),
-    ('home', 'Home & Kitchen'),
-    ('other', 'Other'),
-)
+from ..models.category import Category  # import your Category model
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
     image = models.ImageField(upload_to='product_images/', null=True, blank=True)
-    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+    
+    # Link category as ForeignKey to Category model
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='products')
     
     price = models.DecimalField(max_digits=10, decimal_places=2)
     discount_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)

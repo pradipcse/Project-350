@@ -1,14 +1,18 @@
 from rest_framework import serializers
 from ..models.product import Product
+from ..models.category import Category
 
 class ProductSerializer(serializers.ModelSerializer):
-    #uploader = serializers.ReadOnlyField(source='uploader.email')
     average_rating = serializers.FloatField(read_only=True)
     number_of_reviews = serializers.IntegerField(read_only=True)
     current_price = serializers.FloatField(read_only=True)
-
-    # Use ImageField instead of SerializerMethodField
     image = serializers.ImageField(required=False, allow_null=True, use_url=True)
+    
+    # Category shows category name, input expects category name
+    category = serializers.SlugRelatedField(
+        queryset=Category.objects.all(),
+        slug_field='name'
+    )
 
     class Meta:
         model = Product
