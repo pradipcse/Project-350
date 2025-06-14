@@ -8,6 +8,7 @@ from api.views.category import CategoryViewSet# SubCategoryViewSet
 from api.views.caurosel import CarouselListCreateView, CarouselRetrieveUpdateDestroyView
 from api.views.freeProduct import FreeProductListCreateView, FreeProductRetrieveUpdateDestroyView
 from api.views.login import LoginView
+from api.views.mainSearch import ProductSearchView
 from api.views.orders import OrderCreateFromCartView, OrderListView
 from api.views.product import ProductViewSet
 from api.views.register import RegisterView
@@ -54,6 +55,7 @@ urlpatterns = [
     path('carousel/<int:pk>/', CarouselRetrieveUpdateDestroyView.as_view(), name='carousel-detail'),
     path('free-products/', FreeProductListCreateView.as_view(), name='freeproduct-list-create'),
     path('free-products/<int:pk>/', FreeProductRetrieveUpdateDestroyView.as_view(), name='freeproduct-detail'),
+     path('main/products/search/', ProductSearchView.as_view(), name='product-search'),
     path('v1/', include(router.urls)),
     
 ]
